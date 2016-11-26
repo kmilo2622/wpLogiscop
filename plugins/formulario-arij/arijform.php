@@ -55,7 +55,7 @@ function perfil(){
 }
 
 function registration() {
-    return "funciona";
+    include 'views/start.php';
 }
 
 add_shortcode('test', 'registerForm');
