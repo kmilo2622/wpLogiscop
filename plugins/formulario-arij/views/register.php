@@ -13,7 +13,7 @@
 <br><br>
 <div class="container exclaimer">
     <div class="formulario">
-        <form class="form-horizontal" method="POST" action="send_mail.php">
+        <form class="form-horizontal" method="POST" action="<?php echo get_home_url(). "/mi-cuenta/register/registro-completado/" ?>">
 
             <div class="form-group">
                 <label class="control-label col-sm-2" for="name">Nombres y Apellidos *:</label>

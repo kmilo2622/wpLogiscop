@@ -61,6 +61,7 @@ function registration() {
 add_shortcode('test', 'registerForm');
 add_shortcode('start', 'startSession');
 add_shortcode('perfil', 'perfil');
+add_shortcode('registration', 'registration');
 
 /*
 * @description Hook que se ejecuta al desactivar el plugin
