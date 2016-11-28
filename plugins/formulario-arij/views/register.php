@@ -101,7 +101,7 @@
             <div class="form-group">
                 <label for="fijo" class="control-label col-sm-2">Teléfono Fijo:</label>
                 <div class="col-sm-9">
-                    <input type="tel" class="form-control" required="required" id="telefono" name="telefono" placeholder="Indique su Número de Teléfono">
+                    <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Indique su Número de Teléfono">
                 </div>
             </div>
 
