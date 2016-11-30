@@ -13,8 +13,9 @@ $tcajas = $wpdb->prefix . 'arij_cajas';
 $tbeneficiarios = $wpdb->prefix . 'arij_beneficiarios';
 $tpensiones = $wpdb->prefix . 'arij_pensiones';
 $testados = $wpdb->prefix . 'arij_estados';
+$tinformes = $wpdb->prefix . 'arij_informes';
 
 //sql con el statement de la tabla
-$sql = "DROP table IF EXISTS $table_name, $tciudades, $tdepartamentos, $triesgos, $tafiliaciones, $teps, $tcajas, $tbeneficiarios, $tpensiones, $testados";
+$sql = "DROP table IF EXISTS $table_name, $tciudades, $tdepartamentos, $triesgos, $tafiliaciones, $teps, $tcajas, $tbeneficiarios, $tpensiones, $testados, $tinformes";
 
 $wpdb->query($sql);
