@@ -12,7 +12,7 @@ $nacimiento = null;
 $edad = null;
 $ciudad = null;
 $embarazo = null;
-$enfermedad = null;
+$enfermedad = '';
 $celular = null;
 $telefono = null;
 $referido = null;
@@ -61,7 +61,7 @@ if (isset($r['embarazo'])) {
 	$embarazo = $r['embarazo'];
 }
 
-if (isset($r['enfermedad'])) {
+if (isset($r['enfermedad']) != null) {
 	$enfermedad = $r['enfermedad'];
 }
 
@@ -130,7 +130,7 @@ foreach ($resultado as $valor) {
 
 		echo $mensaje;
 
-	} elseif ($contrasena == $valor->contrasena) {
+	} elseif ($identificacion == $valor->cedula) {
 
 		$mensaje = "<div class='alert alert-danger' align='center'>";
 		$mensaje .= "<p><strong>Error!</strong> Este numero de documento ya se encuentra registrado en nuestra base de datos, por favor intente nuevamente</p>";
@@ -141,19 +141,39 @@ foreach ($resultado as $valor) {
 		echo $mensaje;
 
 	} else {
+		//Aqui se inserta toda la informacion en la base de datos correspondiente
 
-	//Aqui se inserta toda la informacion en la base de datos correspondiente
+		$wpdb->insert($table, array(
+			'nombre' => $nombre,
+			'cedula' => $identificacion,
+			'email' => $email,
+			'contrasena' => $contrasena,
+			'nacimiento' => $nacimiento,
+			'edad' => $edad,
+			'estado' => 2,
+			'celular' => $celular,
+			'telefono' => $telefono,
+			'referido' => $referido,
+			'ciudad' => $ciudad,
+			'riesgo' => $riesgo,
+			'afiliacion' => $afiliacion,
+			'eps' => $epSalud,
+			'caja' => $cajaCompensacion,
+			'beneficiario' => $beneficiarios,
+			'pension' => $pensiones,
+			'enfermedad' => $enfermedad,
+		));
 
-		$wpdb->query($wpdb->prepare("INSERT INTO $table (nombre, cedula, email, contrasena, nacimiento, estado, edad, celular, telefono, referido, ciudad, riesgo, afiliacion, eps, caja, beneficiario, pension, enfermedad, updated_at, created_at) VALUES ($nombre, $identificacion, $contrasena, $nacimiento, 2, $edad, $celular, $telefono, $referido, $ciudad, $riesgo, $afiliacion, $epSalud, $cajaCompensacion, $beneficiarios, $pensiones, $enfermedad, CURRENT_TIMESTAMP, '0000-00-00 00:00:00')"));
+		?>
 
+		<h1>Hola, <?= $nombre ?></h1>
+		<p>El registro de tu cédula <?= $identificacion ?> se ha completado exitosamente</p>
+
+		<pre>
+			<?php print_r($r); ?>
+		</pre>
+
+		<?php die;	}
 	}
-}
 
-?>
-
-<h1>Hola, <?= $nombre ?></h1>
-<p>El registro de tu cédula <?= $identificacion ?> se ha completado exitosamente</p>
-
-<pre>
-	<?php print_r($r); ?>
-</pre>
+	?>
