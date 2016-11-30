@@ -10,7 +10,7 @@ global $wpdb;
 
 $table = $wpdb->prefix . 'arij_usuarios';
 
-$consulta = "SELECT * FROM $table WHERE email = '$email' AND contraseña = '$contrasena'";
+$consulta = "SELECT * FROM $table WHERE email = '$email' AND contrasena = '$contrasena'";
 $resultado = $wpdb->get_results($consulta);
 
 if ($resultado == null) {
