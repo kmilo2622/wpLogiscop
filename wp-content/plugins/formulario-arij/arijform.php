@@ -78,7 +78,12 @@ function udp_get_search() {
         );
     }
 
-    add_action('admin_menu', 'administrator');
+    function administrator_menu(){
+        add_options_page('arij', 'Arij', 8, basename(__FILE__), 'arij_administrator_view');
+    }
+
+    //add_action('admin_menu', 'administrator');
+    add_action('admin_menu', 'administrator_menu');
 
     /*
     * @description Hook que se ejecuta al desactivar el plugin
