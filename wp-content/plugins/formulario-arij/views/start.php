@@ -130,10 +130,32 @@ foreach ($resultado as $valor) {
 
 		echo $mensaje;
 
+		die;
+
 	} elseif ($identificacion == $valor->cedula) {
 
 		$mensaje = "<div class='alert alert-danger' align='center'>";
 		$mensaje .= "<p><strong>Error!</strong> Este numero de documento ya se encuentra registrado en nuestra base de datos, por favor intente nuevamente</p>";
+		$mensaje .= "</div><br/><br/>";
+		$mensaje .= "<div class='form-group' align='center'>";
+		$mensaje .=	"<a href='http://www.johnarij.ml/logiscop/mi-cuenta/register/' class='btn btn-danger btn-lg' role='button'>Volver al registro</a>";
+
+		echo $mensaje;
+
+	} elseif ($contrasena != $vcontrasena) {
+
+		$mensaje = "<div class='alert alert-danger' align='center'>";
+		$mensaje .= "<p><strong>Error!</strong> Las Contraseñas no coinciden</p>";
+		$mensaje .= "</div><br/><br/>";
+		$mensaje .= "<div class='form-group' align='center'>";
+		$mensaje .=	"<a href='http://www.johnarij.ml/logiscop/mi-cuenta/register/' class='btn btn-danger btn-lg' role='button'>Volver al registro</a>";
+
+		echo $mensaje;
+
+	} elseif (strlen($contrasena) < 5) {
+
+		$mensaje = "<div class='alert alert-danger' align='center'>";
+		$mensaje .= "<p><strong>Error!</strong> La contraseña debe tener como mínimo 5 caracteres</p>";
 		$mensaje .= "</div><br/><br/>";
 		$mensaje .= "<div class='form-group' align='center'>";
 		$mensaje .=	"<a href='http://www.johnarij.ml/logiscop/mi-cuenta/register/' class='btn btn-danger btn-lg' role='button'>Volver al registro</a>";

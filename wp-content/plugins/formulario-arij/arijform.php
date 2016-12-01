@@ -34,43 +34,60 @@ function udp_get_search() {
         $table_name = $wpdb->prefix . 'arij_users';
 
         $wpdb->insert(
-        $table_name,
-        array(
-            'search' =>  esc_attr( $_GET["s"] )
-            )
+            $table_name,
+            array(
+                'search' =>  esc_attr( $_GET["s"] )
+                )
+            );
+        }
+    }
+
+    function registerForm(){
+        include 'views/register.php';
+    }
+
+    function startSession(){
+        include 'views/startsession.php';
+    }
+
+    function perfil(){
+        include 'views/profile.php';
+    }
+
+    function registration() {
+        include 'views/start.php';
+    }
+
+    add_shortcode('test', 'registerForm');
+    add_shortcode('start', 'startSession');
+    add_shortcode('perfil', 'perfil');
+    add_shortcode('registration', 'registration');
+
+    function arij_administrator_view(){
+        include 'admin/admin.php';
+    }
+
+    function administrator(){
+        add_menu_page(
+            'Arij Administrator', //Título de la página
+            'Administrador de Usuarios', //Título del menú
+            'administrator', //Rol único que puede acceder
+            'arij_administrator', //ID de la página de opciones
+            'arij_administrator_view', //Función que pinta la página de configuración
+            'dashicons_admin_generic'
         );
     }
-}
 
-function registerForm(){
-    include 'views/register.php';
-}
+    add_action('admin_menu', 'administrator');
 
-function startSession(){
-    include 'views/startsession.php';
-}
+    /*
+    * @description Hook que se ejecuta al desactivar el plugin
+    */
+    register_deactivation_hook(__FILE__, 'udp_remove_tables' );
 
-function perfil(){
-    include 'views/profile.php';
-}
-
-function registration() {
-    include 'views/start.php';
-}
-
-add_shortcode('test', 'registerForm');
-add_shortcode('start', 'startSession');
-add_shortcode('perfil', 'perfil');
-add_shortcode('registration', 'registration');
-
-/*
-* @description Hook que se ejecuta al desactivar el plugin
-*/
-register_deactivation_hook(__FILE__, 'udp_remove_tables' );
-
-/*
-* @description Función que se ejecuta al desactivar el plugin
-*/
-function udp_remove_tables() {
-    require 'tables/drop-tables.php';
-}
+    /*
+    * @description Función que se ejecuta al desactivar el plugin
+    */
+    function udp_remove_tables() {
+        require 'tables/drop-tables.php';
+    }
