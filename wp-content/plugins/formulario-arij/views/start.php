@@ -1,6 +1,8 @@
 <?php
 $r = $_REQUEST;
 
+//print_r($r);
+
 //En este punto se recopila toda la informacion para luego insertarla en la base de datos
 
 $nombre = null;
@@ -142,6 +144,8 @@ foreach ($resultado as $valor) {
 
 		echo $mensaje;
 
+		die;
+
 	} elseif ($contrasena != $vcontrasena) {
 
 		$mensaje = "<div class='alert alert-danger' align='center'>";
@@ -152,6 +156,8 @@ foreach ($resultado as $valor) {
 
 		echo $mensaje;
 
+		die;
+
 	} elseif (strlen($contrasena) < 5) {
 
 		$mensaje = "<div class='alert alert-danger' align='center'>";
@@ -161,6 +167,8 @@ foreach ($resultado as $valor) {
 		$mensaje .=	"<a href='http://www.johnarij.ml/logiscop/mi-cuenta/register/' class='btn btn-danger btn-lg' role='button'>Volver al registro</a>";
 
 		echo $mensaje;
+
+		die;
 
 	} else {
 		//Aqui se inserta toda la informacion en la base de datos correspondiente
@@ -197,5 +205,4 @@ foreach ($resultado as $valor) {
 
 		<?php die;	}
 	}
-
 	?>

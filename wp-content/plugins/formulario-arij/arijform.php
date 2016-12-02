@@ -58,32 +58,15 @@ function udp_get_search() {
         include 'views/start.php';
     }
 
+    function administrator(){
+        include 'admin/administrator.php';
+    }
+
     add_shortcode('test', 'registerForm');
     add_shortcode('start', 'startSession');
     add_shortcode('perfil', 'perfil');
     add_shortcode('registration', 'registration');
-
-    function arij_administrator_view(){
-        include 'admin/admin.php';
-    }
-
-    function administrator(){
-        add_menu_page(
-            'Arij Administrator', //Título de la página
-            'Administrador de Usuarios', //Título del menú
-            'administrator', //Rol único que puede acceder
-            'arij_administrator', //ID de la página de opciones
-            'arij_administrator_view', //Función que pinta la página de configuración
-            'dashicons_admin_generic'
-        );
-    }
-
-    function administrator_menu(){
-        add_options_page('arij', 'Arij', 8, basename(__FILE__), 'arij_administrator_view');
-    }
-
-    //add_action('admin_menu', 'administrator');
-    add_action('admin_menu', 'administrator_menu');
+    add_shortcode('admin', 'administrator');
 
     /*
     * @description Hook que se ejecuta al desactivar el plugin
