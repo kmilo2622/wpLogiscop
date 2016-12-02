@@ -2,12 +2,8 @@
 
 <p>
     <?php
-    global $wpdb;
 
-    $table = $wpdb->prefix . 'arij_usuarios';
-
-    $consulta = "SELECT * FROM $table";
-    $resultado = $wpdb->get_results($consulta);
+    include 'relaciones.php';
 
     ?>
     <style>
@@ -40,35 +36,75 @@
                     <th>Riesgo</th>
                     <th>Afiliacion</th>
                     <th>Eps</th>
+                    <th>Caja de Compensación</th>
                     <th>Beneficiario</th>
                     <th>Pension</th>
                     <th>Enfermedad</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($resultado as $r) {
+                <?php foreach ($user as $u) {
+
+                    $riesgos = "SELECT * FROM $triesgos WHERE id = $u->riesgo";
+                    $risk = $wpdb->get_results($riesgos);
+
+                    $ciudades = "SELECT * FROM $tciudades WHERE codigo = $u->ciudad";
+                    $city = $wpdb->get_results($ciudades);
+
+                    $afiliaciones = "SELECT * FROM $triesgos WHERE id = $u->riesgo";
+                    $afiliation = $wpdb->get_results($afiliaciones);
+
+                    $epSalud = "SELECT * FROM $teps WHERE id = $u->eps";
+                    $eps = $wpdb->get_results($epSalud);
+
+                    $cajaCompensacion = "SELECT * FROM $tcajas WHERE id = $u->caja";
+                    $caja = $wpdb->get_results($cajaCompensacion);
+
+                    $beneficiarios = "SELECT * FROM $tbeneficiarios WHERE id = $u->beneficiario";
+                    $benefactor = $wpdb->get_results($beneficiarios);
+
+                    $pensiones = "SELECT * FROM $tpensiones WHERE id = $u->pension";
+                    $pension = $wpdb->get_results($pensiones);
+
+                    $estadoUsuario = "SELECT * FROM $testados WHERE id = $u->estado";
+                    $estado = $wpdb->get_results($estadoUsuario);
+
+                    $informeUsuario = "SELECT * FROM $tinformes WHERE usuario = $u->id";
+                    $informe = $wpdb->get_results($informeUsuario);
                     //print_r($r); ?>
                     <tr>
-                        <td><?= $r->id ?></td>
-                        <td><?= $r->nombre ?></td>
-                        <td><?= $r->cedula ?></td>
-                        <td><?= $r->nacimiento ?></td>
-                        <td><?= $r->estado ?></td>
-                        <td><?= $r->edad ?></td>
-                        <td><?= $r->celular ?></td>
-                        <td><?= $r->telefono ?></td>
-                        <td><?= $r->referido ?></td>
-                        <td><?= $r->ciudad ?></td>
-                        <td><?= $r->riesgo ?></td>
-                        <td><?= $r->afiliacion ?></td>
-                        <td><?= $r->eps ?></td>
-                        <td><?= $r->beneficiario ?></td>
-                        <td><?= $r->pension ?></td>
-                        <td><?= $r->enfermedad ?></td>
+                        <td><?= $u->id ?></td>
+                        <td><?= $u->nombre ?></td>
+                        <td><?= $u->cedula ?></td>
+                        <td><?= $u->nacimiento ?></td>
+                        <td><?php foreach ($estado as $e){ echo $e->estado; } ?></td>
+                        <td><?= $u->edad ?></td>
+                        <td><?= $u->celular ?></td>
+                        <td><?= $u->telefono ?></td>
+                        <td><?= $u->referido ?></td>
+                        <td><?php foreach ($city as $c){ echo $c->ciudad; } ?></td>
+                        <td><?php foreach ($risk as $r){ echo $r->riesgo; } ?></td>
+                        <td><?= $u->afiliacion ?></td>
+                        <td><?= $u->eps ?></td>
+                        <td><?= $u->caja ?></td>
+                        <td><?= $u->beneficiario ?></td>
+                        <td><?= $u->pension ?></td>
+                        <td><?= $u->enfermedad ?></td>
                     </tr>
-                    <?php }
-                    ?>
-                </tbody>
-            </table>
-        </div>
+                    <?php
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+    <p>
+        A continuación puedes cambiar el estado de cualquier usuario
+        <br><br>
+        <p>
+            <b>Código del usuario</b><br>
+            <input type="number" name="codigo" id="codigo"><br>
+            <b>Estado</b> 1 = Activo, 2 = Inactivo, 3 = Pendiente <br>
+            <input type="number" name="status" id="status">
+        </p>
     </p>
+</p>
