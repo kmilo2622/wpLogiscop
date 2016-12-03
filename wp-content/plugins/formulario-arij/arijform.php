@@ -27,7 +27,7 @@ add_action( 'register_form', 'udp_get_search' );
 function udp_get_search() {
 
     add_options_page('ArijUsers', 'ArijUsers', 'administrator',
-    'arijform', 'arij_users_admin_page');
+        'arijform', 'arij_users_admin_page');
 
     if(isset($_GET["s"]) && !empty($_GET["s"])) {
         global $wpdb;
@@ -39,34 +39,39 @@ function udp_get_search() {
                 'search' =>  esc_attr( $_GET["s"] )
                 )
             );
-        }
     }
+}
 
-    function registerForm(){
-        include 'views/register.php';
-    }
+function registerForm(){
+    include 'views/register.php';
+}
 
-    function startSession(){
-        include 'views/startsession.php';
-    }
+function startSession(){
+    include 'views/startsession.php';
+}
 
-    function perfil(){
-        include 'views/profile.php';
-    }
+function perfil(){
+    include 'views/profile.php';
+}
 
-    function registration() {
-        include 'views/start.php';
-    }
+function registration() {
+    include 'views/start.php';
+}
 
-    function administrator(){
-        include 'admin/administrator.php';
-    }
+function administrator(){
+    include 'admin/administrator.php';
+}
 
-    add_shortcode('test', 'registerForm');
-    add_shortcode('start', 'startSession');
-    add_shortcode('perfil', 'perfil');
-    add_shortcode('registration', 'registration');
-    add_shortcode('admin', 'administrator');
+function cambios(){
+    include 'admin/cambios.php';
+}
+
+add_shortcode('test', 'registerForm');
+add_shortcode('start', 'startSession');
+add_shortcode('perfil', 'perfil');
+add_shortcode('registration', 'registration');
+add_shortcode('admin', 'administrator');
+add_shortcode('cambios', 'cambios');
 
     /*
     * @description Hook que se ejecuta al desactivar el plugin
