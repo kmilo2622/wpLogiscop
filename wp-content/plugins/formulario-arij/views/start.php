@@ -199,9 +199,11 @@ foreach ($resultado as $valor) {
 		<h1>Hola, <?= $nombre ?></h1>
 		<p>El registro de tu cédula <?= $identificacion ?> se ha completado exitosamente</p>
 
-		<pre>
-			<?php print_r($r); ?>
-		</pre>
+		<p>
+			Ingrese a su perfil en este momento con el fin de ver sus pagos correspondientes, es recomendable que visite su perifl diariamente para conocer el estado de sus pagos y su seguridad social.
+			<br>
+			Muchas Gracias por preferirnos. 
+		</p>
 
 		<?php die;	}
 	}

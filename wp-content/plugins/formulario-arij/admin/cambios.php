@@ -44,20 +44,26 @@ $tinformes = $wpdb->prefix . 'arij_informes';
 
 if ($codigoactualizar != null && $statusactualizar != null) {
 
-	$wpdb->update($table, array( 
+	$wpdb->update($table, array(
 		'estado' => $statusactualizar
-		), 
-	array( 'id' => $codigoactualizar ), 
-	array( 
+		),
+	array( 'id' => $codigoactualizar ),
+	array(
 		'%s',	// value1
 		'%d'	// value2
-		), 
-	array( '%d' ) 
+		),
+	array( '%d' )
 	);
 
-	echo "El estado del usuario $codigoactualizar fue actualizado correctamente";
+	echo "El estado del usuario $codigoactualizar fue actualizado correctamente <br />";
+	?>
+	<a href="<?php echo get_home_url(). "/admin" ?>" class='btn btn-danger btn-lg' role='button'>Volver al panel de Administración</a><br>
+	<?php
 } else {
-	echo "Ingresa por favor los datos correctamente";
+	echo "Ingresa por favor los datos correctamente si lo que deseas es actualizar el estado de un usuario <br />";
+	?>
+	<a href="<?php echo get_home_url(). "/admin" ?>" class='btn btn-danger btn-lg' role='button'>Volver al panel de Administración</a><br>
+	<?php
 }
 
 if ($codigoinforme != null && $mes != null && $ano != null && $link != null) {
@@ -68,6 +74,17 @@ if ($codigoinforme != null && $mes != null && $ano != null && $link != null) {
 		'mes' => $mes,
 		'ano' => $ano,
 		));
+
+		echo "El recibo del usuario $codigoinforme para el mes de $mes del año $ano fue ingresado correctamente <br />";
+
+		?>
+		<a href="<?php echo get_home_url(). "/admin" ?>" class='btn btn-danger btn-lg' role='button'>Volver al panel de Administración</a><br>
+		<?php
+} else {
+	echo "Ingresa por favor los datos del informe si lo que deseas es subirlo. <br />";
+	?>
+	<a href="<?php echo get_home_url(). "/admin" ?>" class='btn btn-danger btn-lg' role='button'>Volver al panel de Administración</a><br>
+	<?php
 }
 
 ?>

@@ -66,12 +66,17 @@ function cambios(){
     include 'admin/cambios.php';
 }
 
+function insertarDatos(){
+    include 'admin/insertar.php';
+}
+
 add_shortcode('test', 'registerForm');
 add_shortcode('start', 'startSession');
 add_shortcode('perfil', 'perfil');
 add_shortcode('registration', 'registration');
 add_shortcode('admin', 'administrator');
 add_shortcode('cambios', 'cambios');
+add_shortcode('insertar', 'insertarDatos');
 
     /*
     * @description Hook que se ejecuta al desactivar el plugin

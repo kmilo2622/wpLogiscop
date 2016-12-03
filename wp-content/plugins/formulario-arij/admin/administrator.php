@@ -32,7 +32,7 @@
                 <input type="number" name="codigoactualizar" id="codigo"><br>
                 <b>Estado</b><br>
                 <input type="number" name="statusactualizar" id="status"><br>
-                <p> 1 = Activo, 2 = Inactivo, 3 = Pendiente</p>
+                <p> 1 = Activo, 2 = Inactivo, 3 = Pendiente, 4 = Que es referido</p>
             </p>
             <br>
 
@@ -44,7 +44,7 @@
 
         <form method="POST" action="<?php echo get_home_url(). "/admin/cambios/" ?>">
             <p>
-                A continuacion podra subir los documentos y recibos de pago de los usuarios. Por favor, ingrese a continuacion el link en google drive, dropbox o cualquier servidor externo. 
+                A continuacion podra subir los documentos y recibos de pago de los usuarios. Por favor, ingrese a continuacion el link en google drive, dropbox o cualquier servidor externo.
             </p>
             <br>
             <p>
@@ -64,7 +64,7 @@
                     <option value="Septiembre">Septiembre</option>
                     <option value="Octubre">Octubre</option>
                     <option value="Noviembre">Noviembre</option>
-                    <option value="Dociembre">Dociembre</option>
+                    <option value="Diciembre">Dociembre</option>
                 </select>
                 <select name="ano">
                     <option value="2016">2016</option>
@@ -76,7 +76,7 @@
         </form>
     </p>
 
-    <?php 
+    <?php
     //Ahora actualizemos los registros que estamos gestionando... no hay problema verdad?
     function actualizar(){
         echo $_REQUEST['ano'];
@@ -91,6 +91,7 @@
                 <tr>
                     <th>Codigo</th>
                     <th>Nombre</th>
+                    <th>Email</th>
                     <th>Cedula</th>
                     <th>Fecha de Nacimiento</th>
                     <th>Estado</th>
@@ -117,7 +118,7 @@
                     $ciudades = "SELECT * FROM $tciudades WHERE codigo = $u->ciudad";
                     $city = $wpdb->get_results($ciudades);
 
-                    $afiliaciones = "SELECT * FROM $triesgos WHERE id = $u->riesgo";
+                    $afiliaciones = "SELECT * FROM $tafiliaciones WHERE id = $u->riesgo";
                     $afiliation = $wpdb->get_results($afiliaciones);
 
                     $epSalud = "SELECT * FROM $teps WHERE id = $u->eps";
@@ -141,6 +142,7 @@
                     <tr>
                         <td><?= $u->id ?></td>
                         <td><?= $u->nombre ?></td>
+                        <td><?= $u->email ?></td>
                         <td><?= $u->cedula ?></td>
                         <td><?= $u->nacimiento ?></td>
                         <td><?php foreach ($estado as $e){ echo $e->estado; } ?></td>
@@ -149,12 +151,12 @@
                         <td><?= $u->telefono ?></td>
                         <td><?= $u->referido ?></td>
                         <td><?php foreach ($city as $c){ echo $c->ciudad; } ?></td>
-                        <td><?php foreach ($risk as $r){ echo $r->riesgo; } ?></td>
-                        <td><?= $u->afiliacion ?></td>
-                        <td><?= $u->eps ?></td>
-                        <td><?= $u->caja ?></td>
-                        <td><?= $u->beneficiario ?></td>
-                        <td><?= $u->pension ?></td>
+                        <td><?php foreach ($risk as $r){ echo "Nivel " . $r->nivel; } ?></td>
+                        <td><?php foreach ($afiliation as $af){ echo $af->afiliacion; } ?></td>
+                        <td><?php foreach ($eps as $ep){ echo $ep->eps; } ?></td>
+                        <td><?php foreach ($caja as $ep){ echo $ep->caja; } ?></td>
+                        <td><?php foreach ($benefactor as $be){ echo $be->beneficiarios; } ?></td>
+                        <td><?php foreach ($pension as $pe){ echo $pe->pension; } ?></td>
                         <td><?= $u->enfermedad ?></td>
                     </tr>
                     <?php
@@ -163,4 +165,13 @@
             </tbody>
         </table>
     </div>
+
+    <?php
+    if ($user == null) { ?>
+        <form action="<?php echo get_home_url(). "/admin/insertar/" ?>">
+            <p>Esta acción solo ejecútala una sola vez en tu vida</p>
+            <button type="submit" name="insertar datos">Insertar Datos</button>
+        </form>
+    <?php }
+    ?>
 </p>

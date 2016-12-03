@@ -176,9 +176,9 @@
             </div>
 
             <div class="form-group">
-                <label for="caja" class="control-label col-sm-2">Caja de Compensación *: </label>
+                <label for="caja" class="control-label col-sm-2">Caja de Compensación: </label>
                 <div class="col-sm-9">
-                    <select required class="form-control" id="sel1" name="cajaCompensacion">
+                    <select class="form-control" id="sel1" name="cajaCompensacion">
                         <option value="1">Escogí un Plan sin caja de compensación</option>
                         <option value="2">Bogotá - Colsubsidio</option>
                         <option value="3">Bogotá - Compensar</option>
@@ -194,26 +194,25 @@
             <div class="form-group">
                 <label for="beneficiarios" class="control-label col-sm-2">Beneficiarios *: </label>
                 <div class="col-sm-9">
-                    <select required class="form-control" id="sel1" name="beneficiarios">
+                    <select class="form-control" id="sel1" name="beneficiarios">
                         <option value="1">No tengo Beneficiarios</option>
                         <option value="2">Si tengo, mi(s) hijos(as)</option>
-                        <option value="3">Si tengo, mi(s) hijos(as)</option>
-                        <option value="4">Si, mi conyuge</option>
-                        <option value="5">Si, mis padres dependen economicamente de mi</option>
+                        <option value="3">Si, mi conyuge</option>
+                        <option value="4">Si, mis padres dependen economicamente de mi</option>
                     </select>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="pension" class="control-label col-sm-2">Pensión *: </label>
+                <label for="pension" class="control-label col-sm-2">Pensión: </label>
                 <div class="col-sm-9">
-                    <select required class="form-control" id="sel1" name="pensiones">
+                    <select class="form-control" id="sel1" name="pensiones">
                         <option value="1">No requiero cotizar</option>
                         <option value="2">Protección</option>
                         <option value="3">Porvenir</option>
                         <option value="4">Colpensiones</option>
                         <option value="5">Colfondos</option>
-                        <option value="5">OldMutual</option>
+                        <option value="6">OldMutual</option>
                     </select>
                 </div>
             </div>
