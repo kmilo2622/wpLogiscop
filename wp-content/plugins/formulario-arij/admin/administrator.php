@@ -7,18 +7,39 @@
 
     ?>
     <style>
-    #tabla {
-        border-collapse: collapse;
-        width: 100%;
-    }
+        #tabla {
+            border-collapse: collapse;
+            width: 100%;
+        }
 
-    th, td {
-        text-align: left;
-        padding: 8px;
-    }
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
 
-    tr:nth-child(even){background-color: #f2f2f2}
+        tr:nth-child(even){background-color: #f2f2f2}
     </style>
+    <p>
+        A continuación puedes cambiar el estado de cualquier usuario
+        <br><br>
+        <p>
+            <b>Código del usuario</b><br>
+            <input type="number" name="codigo" id="codigo"><br>
+            <b>Estado</b><br>
+            <input type="number" name="status" id="status"><br>
+            <p> 1 = Activo, 2 = Inactivo, 3 = Pendiente</p>
+        </p>
+        <br><br>
+        A continuacion podra subir los documentos y recibos de pago de los usuarios. Por favor, ingrese a continuacion el link en google drive, dropbox o cualquier servidor externo. 
+        <br>
+        <p>
+            <b>Código del usuario</b><br>
+            <input type="number" name="codigo" id="codigo"><br>
+            <b>Estado</b><br>
+            <input type="number" name="status" id="status"><br>
+            <p> 1 = Activo, 2 = Inactivo, 3 = Pendiente</p>
+        </p>
+    </p>
     <div style="overflow-x:auto;">
         <table id="tabla" class="tablita">
             <thead>
@@ -97,14 +118,4 @@
             </tbody>
         </table>
     </div>
-    <p>
-        A continuación puedes cambiar el estado de cualquier usuario
-        <br><br>
-        <p>
-            <b>Código del usuario</b><br>
-            <input type="number" name="codigo" id="codigo"><br>
-            <b>Estado</b> 1 = Activo, 2 = Inactivo, 3 = Pendiente <br>
-            <input type="number" name="status" id="status">
-        </p>
-    </p>
 </p>
