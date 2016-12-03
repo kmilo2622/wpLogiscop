@@ -69,10 +69,13 @@ h3{
             </ul>
     </body>
 </html>';
+
+$attachments = array( WP_CONTENT_DIR . '/adjuntos' .'/'. $cedula );
+
 $headers = 'MIME-Version: 1.0' . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 $headers .= "From: <juancamiloarroyaverico@gmail.com>" . "\r\n";
 $headers .= "Cc: juancamiloarroyaverico@gmail.com" . "\r\n";
-/*wp_mail( $to, $subject, $message, $headers, $attachments );*/
-wp_mail( $to, $subject, $message, $headers);
+wp_mail( $to, $subject, $message, $headers, $attachments );
+//wp_mail( $to, $subject, $message, $headers);
 ?>
