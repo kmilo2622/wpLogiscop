@@ -16,7 +16,7 @@ if ($user == null) {
 	$mensaje .= "<p><strong>Error!</strong> Verifique nuevamente su usuario o contraseña</p>";
 	$mensaje .= "</div><br/><br/>";
 	$mensaje .= "<div class='form-group' align='center'>";
-	$mensaje .=	"<a href='http://www.johnarij.ml/logiscop/mi-cuenta/login/' class='btn btn-danger btn-lg' role='button'>Volver a Iniciar Sesion</a>";
+	$mensaje .=	"<a href='http://aycgrupoempresarial.com/mi-cuenta/login/' class='btn btn-danger btn-lg' role='button'>Volver a Iniciar Sesion</a>";
 
 	echo $mensaje;
 
@@ -90,5 +90,5 @@ if ($user == null) {
 	?>
 	</p>
 
-	<?php }
+	<?php die; }
 }

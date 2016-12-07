@@ -20,7 +20,7 @@
         tr:nth-child(even){background-color: #f2f2f2}
     </style>
     <p>
-        <form method="POST" action="<?php echo get_home_url(). "/admin/cambios/" ?>">
+        <form method="POST" action="<?php echo get_home_url(). "/administrador/cambios/" ?>">
             <!--Formulario de edicion de usuarios John Arij-->
             <br>
             <p>
@@ -42,7 +42,7 @@
 
         <hr>
 
-        <form method="POST" action="<?php echo get_home_url(). "/admin/cambios/" ?>">
+        <form method="POST" action="<?php echo get_home_url(). "/administrador/cambios/" ?>">
             <p>
                 A continuacion podra subir los documentos y recibos de pago de los usuarios. Por favor, ingrese a continuacion el link en google drive, dropbox o cualquier servidor externo.
             </p>
@@ -168,7 +168,7 @@
 
     <?php
     if ($user == null) { ?>
-        <form action="<?php echo get_home_url(). "/admin/insertar/" ?>">
+        <form action="<?php echo get_home_url(). "/administrador/insertar/" ?>">
             <p>Esta acción solo ejecútala una sola vez en tu vida</p>
             <button type="submit" name="insertar datos">Insertar Datos</button>
         </form>
