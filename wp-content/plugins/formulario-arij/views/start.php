@@ -103,8 +103,8 @@ if (isset($r['pensiones'])) {
 	$pensiones = $r['pensiones'];
 }
 
-if (isset($r['cedula'])) {
-	$cedula = $r['cedula'];
+if (isset($_FILES['cedula']['name'])) {
+	$cedula = $_FILES['cedula']['name'];
 }
 
 if (isset($r['acceptedterms'])) {
@@ -194,7 +194,7 @@ foreach ($resultado as $valor) {
 			'enfermedad' => $enfermedad,
 		));
 
-		include 'send_mail.php';
+		include 'enviar_correo.php';
 
 		?>
 
@@ -207,6 +207,6 @@ foreach ($resultado as $valor) {
 			Muchas Gracias por preferirnos.
 		</p>
 
-		<?php die;	}
+		<?php	} die;
 	}
 	?>

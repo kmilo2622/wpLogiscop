@@ -13,7 +13,7 @@
 <br><br>
 <div class="container exclaimer">
     <div class="formulario">
-        <form class="form-horizontal" method="POST" action="<?php echo get_home_url(). "/mi-cuenta/registrarse/registro-completado/" ?>">
+        <form class="form-horizontal" method="POST" action="<?php echo get_home_url(). "/mi-cuenta/registrarse/registro-completado/" ?>" enctype="multipart/form-data">
 
             <div class="form-group">
                 <label class="control-label col-sm-2" for="name">Nombres y Apellidos *:</label>
@@ -221,6 +221,7 @@
                 <label for="cedula" class="control-label col-sm-2">Adjuntar Cédula:</label>
                 <div class="col-sm-9">
                     <label class="btn btn-primary btn-file">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
                         Insertar Archivo PDF
                         <input type="file" name="cedula" id="cedula" style="display: none" accept="application/pdf">
                     </label>
