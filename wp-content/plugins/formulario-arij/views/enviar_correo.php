@@ -54,11 +54,11 @@ $mensaje = '<!DOCTYPE html>
 
     <div class="container-fluid bg-1 text-center">
         <h3 class="margin">Nuevo Registro de Usuario en AYC Grupo Empresarial</h3>
-        <h3>$nombre</h3>
+        <h3>'.$nombre.'</h3>
     </div>
 
     <div class="container-fluid bg-2 text-center">
-        <h3 class="margin">$nombre</h3>
+        <h3 class="margin">'.$nombre.'</h3>
         <p>Un Nuevo usuario se ha registrado en la plataforma, te informamos entonces sus datos para que puedas almacenarlo correctamente en tu base de datos personal. </p>
     </div>
 
@@ -69,7 +69,7 @@ $mensaje = '<!DOCTYPE html>
                 <p><b>Nombre: </b>'.$nombre.'</p>
             </div>
             <div class="col-sm-4">
-                <p><b>Correo Electrónico: </b>$correo</p>
+                <p><b>Correo Electrónico: </b>'.$email.'</p>
             </div>
             <div class="col-sm-4">
                 <p><b>Cédula: </b>'.$identificacion.'</p>
@@ -132,7 +132,9 @@ $correo->AddAddress("registro@aycgrupoempresarial.com", "AYC Grupo Empresarial -
 $correo->Subject = "Nuevo Registro de usuario " . $nombre . " AYC Grupo Empresarial";
 
 $correo->MsgHTML($mensaje);
-$correo->AddAttachment(WP_CONTENT_DIR . '/plugins/formulario-arij/cedulas/' . $cedula );
+if ($_FILES['cedula']['name'] != null) {
+    $correo->AddAttachment(WP_CONTENT_DIR . '/uploads/et_temp/cedula.pdf' );
+}
 $correo->CharSet = 'UTF-8';
 
 if(!$correo->Send()) {

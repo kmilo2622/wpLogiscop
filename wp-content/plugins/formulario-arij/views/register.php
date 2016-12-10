@@ -221,7 +221,6 @@
                 <label for="cedula" class="control-label col-sm-2">Adjuntar Cédula:</label>
                 <div class="col-sm-9">
                     <label class="btn btn-primary btn-file">
-                        <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
                         Insertar Archivo PDF
                         <input type="file" name="cedula" id="cedula" style="display: none" accept="application/pdf">
                     </label>
