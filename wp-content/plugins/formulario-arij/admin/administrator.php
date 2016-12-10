@@ -19,70 +19,7 @@
 
     tr:nth-child(even){background-color: #f2f2f2}
     </style>
-    <p>
-        <form method="POST" action="<?php echo get_home_url(). "/administrador/cambios/" ?>">
-            <!--Formulario de edicion de usuarios John Arij-->
-            <br>
-            <p>
-                A continuación puedes cambiar el estado de cualquier usuario
-            </p>
-            <br>
-            <p>
-                <b>Código del usuario</b><br>
-                <input type="number" name="codigoactualizar" id="codigo"><br>
-                <b>Estado</b><br>
-                <input type="number" name="statusactualizar" id="status"><br>
-                <p> 1 = Activo, 2 = Inactivo, 3 = Pendiente, 4 = Que es referido</p>
-            </p>
-            <br>
 
-            <button type="submit">Enviar</button>
-
-        </form>
-
-        <hr>
-
-        <form method="POST" action="<?php echo get_home_url(). "/administrador/cambios/" ?>">
-            <p>
-                A continuacion podra subir los documentos y recibos de pago de los usuarios. Por favor, ingrese a continuacion el link en google drive, dropbox o cualquier servidor externo.
-            </p>
-            <br>
-            <p>
-                <b>Código del usuario</b><br>
-                <input type="number" name="codigoinforme" id="codigo"><br>
-                <b>Link</b><br>
-                <input type="text" name="link">
-                <select name="mes">
-                    <option value="Enero">Enero</option>
-                    <option value="Febrero">Febrero</option>
-                    <option value="Marzo">Marzo</option>
-                    <option value="Abril">Abril</option>
-                    <option value="Mayo">Mayo</option>
-                    <option value="Junio">Junio</option>
-                    <option value="Julio">Julio</option>
-                    <option value="Agosto">Agosto</option>
-                    <option value="Septiembre">Septiembre</option>
-                    <option value="Octubre">Octubre</option>
-                    <option value="Noviembre">Noviembre</option>
-                    <option value="Diciembre">Dociembre</option>
-                </select>
-                <select name="ano">
-                    <option value="2016">2016</option>
-                    <option value="2017">2017</option>
-                    <option value="2018">2018</option>
-                </select>
-            </p>
-            <button type="submit">Enviar</button>
-        </form>
-    </p>
-
-    <?php
-    //Ahora actualizemos los registros que estamos gestionando... no hay problema verdad?
-    function actualizar(){
-        echo $_REQUEST['ano'];
-        echo $_REQUEST['ano'];
-    }
-    ?>
     <!--Finalizacion de formulario de edicion de usuarios-->
     <br><br>
     <div style="overflow-x:auto;">
@@ -175,15 +112,90 @@
         <?php
     }
 
-    if ($total_paginas > 1){
-        for ($i=1;$i<=$total_paginas;$i++){
-            if ($pagina == $i)
-            //si muestro el índice de la página actual, no coloco enlace
-            echo $pagina . " ";
-            else
-            //si el índice no corresponde con la página mostrada actualmente, coloco el enlace para ir a esa página
-            echo "<a href='index.php?pagina=" . $i . "&criterio=" . $txt_criterio . "'>" . $i . "</a> ";
+    if ($total_paginas >= 0){
+
+        for ($i=1; $i<=$total_paginas; $i++){
+
+            if ($pagina == $i) {
+
+                echo '<button type="button" class="btn btn-primary disabled">'.$pagina.'</button> ';
+
+                //echo $pagina . " ";
+
+            }
+            else {
+
+                echo '<a href="index.php?pagina= '. $i . '" class="btn btn-primary" role="button">'.$i. '</a> ';
+
+                //echo "<a href='index.php?pagina=" . $i . "'>" . $i . "</a> ";
+
+            }
         }
+    }
+    ?>
+
+    <p>
+        <form method="POST" action="<?php echo get_home_url(). "/administrador/cambios/" ?>">
+            <!--Formulario de edicion de usuarios John Arij-->
+            <br>
+            <p>
+                A continuación puedes cambiar el estado de cualquier usuario
+            </p>
+            <br>
+            <p>
+                <b>Código del usuario</b><br>
+                <input type="number" name="codigoactualizar" id="codigo"><br>
+                <b>Estado</b><br>
+                <input type="number" name="statusactualizar" id="status"><br>
+                <p> 1 = Activo, 2 = Inactivo, 3 = Pendiente, 4 = Que es referido</p>
+            </p>
+            <br>
+
+            <button type="submit">Enviar</button>
+
+        </form>
+
+        <hr>
+
+        <form method="POST" action="<?php echo get_home_url(). "/administrador/cambios/" ?>">
+            <p>
+                A continuacion podra subir los documentos y recibos de pago de los usuarios. Por favor, ingrese a continuacion el link en google drive, dropbox o cualquier servidor externo.
+            </p>
+            <br>
+            <p>
+                <b>Código del usuario</b><br>
+                <input type="number" name="codigoinforme" id="codigo"><br>
+                <b>Link</b><br>
+                <input type="text" name="link">
+                <select name="mes">
+                    <option value="Enero">Enero</option>
+                    <option value="Febrero">Febrero</option>
+                    <option value="Marzo">Marzo</option>
+                    <option value="Abril">Abril</option>
+                    <option value="Mayo">Mayo</option>
+                    <option value="Junio">Junio</option>
+                    <option value="Julio">Julio</option>
+                    <option value="Agosto">Agosto</option>
+                    <option value="Septiembre">Septiembre</option>
+                    <option value="Octubre">Octubre</option>
+                    <option value="Noviembre">Noviembre</option>
+                    <option value="Diciembre">Dociembre</option>
+                </select>
+                <select name="ano">
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                </select>
+            </p>
+            <button type="submit">Enviar</button>
+        </form>
+    </p>
+
+    <?php
+    //Ahora actualizemos los registros que estamos gestionando... no hay problema verdad?
+    function actualizar(){
+        echo $_REQUEST['ano'];
+        echo $_REQUEST['ano'];
     }
     ?>
 </p>
