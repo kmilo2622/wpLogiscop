@@ -2,21 +2,17 @@
 
 <p>
     <?php
-
-    include 'relaciones.php';
-
+    require 'relaciones.php';
     ?>
     <style>
     #tabla {
         border-collapse: collapse;
         width: 100%;
     }
-
     th, td {
         text-align: left;
         padding: 8px;
     }
-
     tr:nth-child(even){background-color: #f2f2f2}
     </style>
 
@@ -48,31 +44,22 @@
             </thead>
             <tbody>
                 <?php foreach ($user as $u) {
-
                     $riesgos = "SELECT * FROM $triesgos WHERE id = $u->riesgo";
                     $risk = $wpdb->get_results($riesgos);
-
                     $ciudades = "SELECT * FROM $tciudades WHERE codigo = $u->ciudad";
                     $city = $wpdb->get_results($ciudades);
-
                     $afiliaciones = "SELECT * FROM $tafiliaciones WHERE id = $u->riesgo";
                     $afiliation = $wpdb->get_results($afiliaciones);
-
                     $epSalud = "SELECT * FROM $teps WHERE id = $u->eps";
                     $eps = $wpdb->get_results($epSalud);
-
                     $cajaCompensacion = "SELECT * FROM $tcajas WHERE id = $u->caja";
                     $caja = $wpdb->get_results($cajaCompensacion);
-
                     $beneficiarios = "SELECT * FROM $tbeneficiarios WHERE id = $u->beneficiario";
                     $benefactor = $wpdb->get_results($beneficiarios);
-
                     $pensiones = "SELECT * FROM $tpensiones WHERE id = $u->pension";
                     $pension = $wpdb->get_results($pensiones);
-
                     $estadoUsuario = "SELECT * FROM $testados WHERE id = $u->estado";
                     $estado = $wpdb->get_results($estadoUsuario);
-
                     $informeUsuario = "SELECT * FROM $tinformes WHERE usuario = $u->id";
                     $informe = $wpdb->get_results($informeUsuario);
                     //print_r($r); ?>
@@ -111,24 +98,15 @@
         </form>
         <?php
     }
-
     if ($total_paginas >= 0){
-
         for ($i=1; $i<=$total_paginas; $i++){
-
             if ($pagina == $i) {
-
                 echo '<button type="button" class="btn btn-primary disabled">'.$pagina.'</button> ';
-
                 //echo $pagina . " ";
-
             }
             else {
-
                 echo '<a href="index.php?pagina= '. $i . '" class="btn btn-primary" role="button">'.$i. '</a> ';
-
                 //echo "<a href='index.php?pagina=" . $i . "'>" . $i . "</a> ";
-
             }
         }
     }
