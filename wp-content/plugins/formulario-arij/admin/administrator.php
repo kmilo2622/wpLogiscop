@@ -157,7 +157,7 @@
                     <option value="Septiembre">Septiembre</option>
                     <option value="Octubre">Octubre</option>
                     <option value="Noviembre">Noviembre</option>
-                    <option value="Diciembre">Dociembre</option>
+                    <option value="Diciembre">Diciembre</option>
                 </select>
                 <select name="ano">
                     <option value="2016">2016</option>
