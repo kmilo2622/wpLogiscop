@@ -70,6 +70,18 @@ function insertarDatos(){
     include 'admin/insertar.php';
 }
 
+function services(){
+    include 'views/services.php';
+}
+
+function soporte(){
+    include 'views/soporte.php';
+}
+
+function submitSoporte(){
+    include 'views/submitsoporte.php';
+}
+
 add_shortcode('test', 'registerForm');
 add_shortcode('start', 'startSession');
 add_shortcode('perfil', 'perfil');
@@ -77,6 +89,9 @@ add_shortcode('registration', 'registration');
 add_shortcode('admin', 'administrator');
 add_shortcode('cambios', 'cambios');
 add_shortcode('insertar', 'insertarDatos');
+add_shortcode('services', 'services');
+add_shortcode('soporte', 'soporte');
+add_shortcode('submitsoporte', 'submitSoporte');
 
     /*
     * @description Hook que se ejecuta al desactivar el plugin

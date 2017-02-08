@@ -22,7 +22,7 @@ $TAMANO_PAGINA = 3;
 if (isset($_GET["pagina"])) {
     $pagina = $_GET["pagina"];
 } else {
-    $pagina = 0;
+    $pagina = 1;
 }
 
 if ($pagina != 0) {

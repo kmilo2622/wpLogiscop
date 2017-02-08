@@ -7,17 +7,17 @@
 
     ?>
     <style>
-    #tabla {
-        border-collapse: collapse;
-        width: 100%;
-    }
+        #tabla {
+            border-collapse: collapse;
+            width: 100%;
+        }
 
-    th, td {
-        text-align: left;
-        padding: 8px;
-    }
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
 
-    tr:nth-child(even){background-color: #f2f2f2}
+        tr:nth-child(even){background-color: #f2f2f2}
     </style>
 
     <!--Finalizacion de formulario de edicion de usuarios-->
@@ -105,97 +105,88 @@
 
     <?php
     if ($user == null) { ?>
-        <form action="<?php echo get_home_url(). "/administrador/insertar/" ?>">
-            <p>Esta acción solo ejecútala una sola vez en tu vida</p>
-            <button type="submit" name="insertar datos">Insertar Datos</button>
-        </form>
-        <?php
-    }
+    <form action="<?php echo get_home_url(). "/administrador/insertar/" ?>">
+        <p>Esta acción solo ejecútala una sola vez en tu vida</p>
+        <button type="submit" name="insertar datos">Insertar Datos</button>
+    </form>
+    <?php
+}
 
-    if ($total_paginas >= 0){
+if ($total_paginas >= 0){
 
-        for ($i=1; $i<=$total_paginas; $i++){
+    for ($i=1; $i<=$total_paginas; $i++){
 
-            if ($pagina == $i) {
+        if ($pagina == $i) {
 
-                echo '<button type="button" class="btn btn-primary disabled">'.$pagina.'</button> ';
+            echo '<button type="button" class="btn btn-primary disabled">'.$pagina.'</button> ';
 
                 //echo $pagina . " ";
 
-            }
-            else {
+        }
+        else {
 
-                echo '<a href="index.php?pagina= '. $i . '" class="btn btn-primary" role="button">'.$i. '</a> ';
+            echo '<a href="index.php?pagina= '. $i . '" class="btn btn-primary" role="button">'.$i. '</a> ';
 
                 //echo "<a href='index.php?pagina=" . $i . "'>" . $i . "</a> ";
 
-            }
         }
     }
-    ?>
+}
+?>
 
-    <p>
-        <form method="POST" action="<?php echo get_home_url(). "/administrador/cambios/" ?>">
-            <!--Formulario de edicion de usuarios John Arij-->
-            <br>
-            <p>
-                A continuación puedes cambiar el estado de cualquier usuario
-            </p>
-            <br>
-            <p>
-                <b>Código del usuario</b><br>
-                <input type="number" name="codigoactualizar" id="codigo"><br>
-                <b>Estado</b><br>
-                <input type="number" name="statusactualizar" id="status"><br>
-                <p> 1 = Activo, 2 = Inactivo, 3 = Pendiente, 4 = Que es referido</p>
-            </p>
-            <br>
+<p>
+    <form method="POST" action="<?php echo get_home_url(). "/administrador/cambios/" ?>">
+        <!--Formulario de edicion de usuarios John Arij-->
+        <br>
+        <p>
+            A continuación puedes cambiar el estado de cualquier usuario
+        </p>
+        <br>
+        <p>
+            <b>Código del usuario</b><br>
+            <input type="number" name="codigoactualizar" id="codigo"><br>
+            <b>Estado</b><br>
+            <input type="number" name="statusactualizar" id="status"><br>
+            <p> 1 = Activo, 2 = Inactivo, 3 = Pendiente, 4 = Que es referido</p>
+        </p>
+        <br>
 
-            <button type="submit">Enviar</button>
+        <button type="submit">Enviar</button>
 
-        </form>
+    </form>
 
-        <hr>
+    <hr>
 
-        <form method="POST" action="<?php echo get_home_url(). "/administrador/cambios/" ?>">
-            <p>
-                A continuacion podra subir los documentos y recibos de pago de los usuarios. Por favor, ingrese a continuacion el link en google drive, dropbox o cualquier servidor externo.
-            </p>
-            <br>
-            <p>
-                <b>Código del usuario</b><br>
-                <input type="number" name="codigoinforme" id="codigo"><br>
-                <b>Link</b><br>
-                <input type="text" name="link">
-                <select name="mes">
-                    <option value="Enero">Enero</option>
-                    <option value="Febrero">Febrero</option>
-                    <option value="Marzo">Marzo</option>
-                    <option value="Abril">Abril</option>
-                    <option value="Mayo">Mayo</option>
-                    <option value="Junio">Junio</option>
-                    <option value="Julio">Julio</option>
-                    <option value="Agosto">Agosto</option>
-                    <option value="Septiembre">Septiembre</option>
-                    <option value="Octubre">Octubre</option>
-                    <option value="Noviembre">Noviembre</option>
-                    <option value="Diciembre">Dociembre</option>
-                </select>
-                <select name="ano">
-                    <option value="2016">2016</option>
-                    <option value="2017">2017</option>
-                    <option value="2018">2018</option>
-                </select>
-            </p>
-            <button type="submit">Enviar</button>
-        </form>
-    </p>
-
-    <?php
-    //Ahora actualizemos los registros que estamos gestionando... no hay problema verdad?
-    function actualizar(){
-        echo $_REQUEST['ano'];
-        echo $_REQUEST['ano'];
-    }
-    ?>
+    <form method="POST" action="<?php echo get_home_url(). "/administrador/cambios/" ?>">
+        <p>
+            A continuacion podra subir los documentos y recibos de pago de los usuarios. Por favor, ingrese a continuacion el link en google drive, dropbox o cualquier servidor externo.
+        </p>
+        <br>
+        <p>
+            <b>Código del usuario</b><br>
+            <input type="number" name="codigoinforme" id="codigo"><br>
+            <b>Link</b><br>
+            <input type="text" name="link">
+            <select name="mes">
+                <option value="Enero">Enero</option>
+                <option value="Febrero">Febrero</option>
+                <option value="Marzo">Marzo</option>
+                <option value="Abril">Abril</option>
+                <option value="Mayo">Mayo</option>
+                <option value="Junio">Junio</option>
+                <option value="Julio">Julio</option>
+                <option value="Agosto">Agosto</option>
+                <option value="Septiembre">Septiembre</option>
+                <option value="Octubre">Octubre</option>
+                <option value="Noviembre">Noviembre</option>
+                <option value="Diciembre">Dociembre</option>
+            </select>
+            <select name="ano">
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+            </select>
+        </p>
+        <button type="submit">Enviar</button>
+    </form>
 </p>

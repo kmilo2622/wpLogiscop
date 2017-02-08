@@ -22,7 +22,7 @@ $tinformes = $wpdb->prefix . 'arij_informes';
 
 //Definimos los usuarios
 
-$usuarios = "SELECT * FROM $table_name WHERE email = '$email'";
+$usuarios = "SELECT * FROM $table_name WHERE email = '$email' AND contrasena = '$contrasena'";
 $user = $wpdb->get_results($usuarios);
 
 if ($user == null) {
@@ -67,43 +67,46 @@ if ($user == null) {
 
 		?>
 
-	<div align="center">
-		<h1>Hola <?= $u->nombre ?></h1>
-		<h2>Bienvenido a nuestro portal!</h2>
-	</div>
+		<div align="center">
+			<h1>Hola <?= $u->nombre ?></h1>
+			<h2>Bienvenido a nuestro portal!</h2>
+		</div>
 
-	<p>
-		En este lugar encontras muchas cosas que te pueden interesar, como toda tu informacion personal presente en nuestra base de datos; tambien encontraras tus ultimas facturas y comprobantes de pago de seguridad social, eps y caja de compensacion.
-		Si tienes alguna duda o sugerencia no dudes en comunicarte con nosotros en <a href="http://www.johnarij.ml/logiscop/contacto">esta seccion</a>
-	</p>
-	<hr>
-	<h4 align="center"><b>Estado Actual: </b><?php foreach ($estado as $e){ echo $e->estado; } ?></h4>
-	<br>
-	<p><b>Cedula de Ciudadania: </b><?= $u->cedula ?></p>
-	<p><b>Correo Electrónico: </b><?= $u->email ?></p>
-	<p><b>Fecha de Nacimiento: </b><?= $u->nacimiento ?></p>
-	<p><b>Edad: </b><?= $u->edad ?></p>
-	<p><b>Celular: </b><?= $u->celular ?></p>
-	<p><b>Telefono: </b><?= $u->telefono ?></p>
-	<p><b>Su ciudad: </b><?php foreach ($city as $c){ echo $c->ciudad; } ?></p>
-	<h4><b>Datos de su afiliación: </b><?php foreach ($afiliation as $af){ echo $af->afiliacion; } ?></h4>
-	<p><b>Precio: </b><?php foreach ($afiliation as $af){ echo $af->precio; } ?></p>
-	<p><b>Estado: </b><?php foreach ($estado as $e){ echo $e->estado; } ?></p>
-	<p><b>Nivel de Riesgo: </b><?php foreach ($risk as $r){ echo $r->riesgo; } ?></p>
-	<p><b>EPS: </b><?php foreach ($eps as $ep){ echo $ep->eps; } ?></p>
-	<p><b>Caja de Compensación: </b><?php foreach ($caja as $ep){ echo $ep->caja; } ?></p>
-	<p><b>Beneficiarios: </b><?php foreach ($benefactor as $be){ echo $be->beneficiarios; } ?></p>
-	<p><b>Pensión: </b><?php foreach ($pension as $pe){ echo $pe->pension; } ?></p>
-	<p><b>Enfermedad: </b><?= $u->enfermedad ?></p>
-	<hr>
-	<h4 align="center">Informes de sus Pagos</h4>
-	<p>
-	<?php
-	foreach ($informe as $i) {?>
-		<a href="<?= $i->informe ?>">Informe del mes de <?= $i->mes ?> del año <?= $i->ano ?></a> <br>
-	<?php }
-	?>
-	</p>
+		<p>
+			En este lugar encontras muchas cosas que te pueden interesar, como toda tu informacion personal presente en nuestra base de datos; tambien encontraras tus ultimas facturas y comprobantes de pago de seguridad social, eps y caja de compensacion.
+			Si tienes alguna duda o sugerencia no dudes en comunicarte con nosotros en <a href="https://aycgrupoempresarial.com/soporte/">esta seccion</a>
+		</p>
+		<p align="right">
+			<a href="<?php echo get_home_url(). "/mi-cuenta/login/" ?>" class="btn btn-primary" role="button">Cerrar Sesión</a>
+		</p>
+		<hr>
+		<h4 align="center"><b>Estado Actual: </b><?php foreach ($estado as $e){ echo $e->estado; } ?></h4>
+		<br>
+		<p><b>Cedula de Ciudadania: </b><?= $u->cedula ?></p>
+		<p><b>Correo Electrónico: </b><?= $u->email ?></p>
+		<p><b>Fecha de Nacimiento: </b><?= $u->nacimiento ?></p>
+		<p><b>Edad: </b><?= $u->edad ?></p>
+		<p><b>Celular: </b><?= $u->celular ?></p>
+		<p><b>Telefono: </b><?= $u->telefono ?></p>
+		<p><b>Su ciudad: </b><?php foreach ($city as $c){ echo $c->ciudad; } ?></p>
+		<h4><b>Datos de su afiliación: </b><?php foreach ($afiliation as $af){ echo $af->afiliacion; } ?></h4>
+		<p><b>Precio: </b><?php foreach ($afiliation as $af){ echo $af->precio; } ?></p>
+		<p><b>Estado: </b><?php foreach ($estado as $e){ echo $e->estado; } ?></p>
+		<p><b>Nivel de Riesgo: </b><?php foreach ($risk as $r){ echo $r->riesgo; } ?></p>
+		<p><b>EPS: </b><?php foreach ($eps as $ep){ echo $ep->eps; } ?></p>
+		<p><b>Caja de Compensación: </b><?php foreach ($caja as $ep){ echo $ep->caja; } ?></p>
+		<p><b>Beneficiarios: </b><?php foreach ($benefactor as $be){ echo $be->beneficiarios; } ?></p>
+		<p><b>Pensión: </b><?php foreach ($pension as $pe){ echo $pe->pension; } ?></p>
+		<p><b>Enfermedad: </b><?= $u->enfermedad ?></p>
+		<hr>
+		<h4 align="center">Informes de sus Pagos</h4>
+		<p>
+			<?php
+			foreach ($informe as $i) {?>
+			<a href="<?= $i->informe ?>">Informe del mes de <?= $i->mes ?> del año <?= $i->ano ?></a> <br>
+			<?php }
+			?>
+		</p>
 
-	<?php }
-}
+		<?php }
+	}

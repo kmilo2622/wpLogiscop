@@ -207,9 +207,10 @@ foreach ($resultado as $valor) {
 			'beneficiario' => $beneficiarios,
 			'pension' => $pensiones,
 			'enfermedad' => $enfermedad,
-		));
+			));
 
 		include 'enviar_correo.php';
+		include 'respondercorreo.php';
 
 		?>
 
