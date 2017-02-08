@@ -109,22 +109,25 @@ if (isset($_FILES['cedula']['name'])) {
 	$temporal = $_FILES['cedula']['tmp_name'];
 	$filename = $ruta . 'cedula.pdf';
 
-
-	if (is_uploaded_file($temporal)) {
-		if (copy($temporal, $filename)) {
-			$mensaje = "Archivo guardado correctamente";
-		} else {
-			$mensaje = "Archivo no enviado correctamente";
-		}
+	if ($_FILES['cedula']['type'] != "application/pdf") {
+		$mensaje = "El Archivo debe contener extensión PDF";
 	} else {
-		$mensaje = "El archivo no se ha actualizado";
+		if (is_uploaded_file($temporal)) {
+			if (copy($temporal, $filename)) {
+				$mensaje = "Archivo guardado correctamente";
+			} else {
+				$mensaje = "Archivo no enviado correctamente";
+			}
+		} else {
+			$mensaje = "El archivo no se ha actualizado";
+		}
 	}
-	
 }
 
 if (isset($r['acceptedterms'])) {
 	$acceptedterms = $r['acceptedterms'];
 }
+
 
 //Primero se consulta a la base de datos para verificar las existencias de las cuentas
 
