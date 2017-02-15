@@ -32,41 +32,41 @@
 				<div class="col-xs-12 col-md-6 feature-afiliation">
 					<h4 class="item_title item_title__">
 						<a href="<?php echo get_home_url(). "/planes/plan-basico/"; ?>">
-							Afiliese Plan <p>Básico</p>
+							Plan <p>Básico</p>
 						</a>
 					</h4>
 					<p style="text-align: center;">
-						<strong>EPS + ARL desde tan sólo <br> $69.900</strong>
+						<strong>EPS + ARL desde <br> $66.000</strong>
 					</p>
 				</div>
 				<div class="col-xs-12 col-md-6 feature-afiliation">
 					<h4 class="item_title item_title__">
-						<a href="<?php echo get_home_url(). "/planes/plan-complementario/"; ?>">
-							Afiliese Plan <p>Complementario</p>
+						<a href="<?php echo get_home_url(). "/planes/plan-medium/"; ?>">
+							Plan <p>Medium</p>
 						</a>
 					</h4>
 					<p style="text-align: center;">
-						<strong>EPS + ARL + CAJA desde sólo <br> $89.900</strong>
+						<strong>EPS + ARL + CCF desde <br> $98.000</strong>
 					</p>
 				</div>
 				<div class="col-xs-12 col-md-6 feature-afiliation">
 					<h4 class="item_title item_title__">
-						<a href="<?php echo get_home_url(). "/planes/plan-integral/"; ?>">
-							Afiliese Plan <br> Integral
+						<a href="<?php echo get_home_url(). "/planes/plan-especial/"; ?>">
+							Plan <br> Especial
 						</a>
 					</h4>
 					<p style="text-align: center;">
-						<strong>EPS + CAJA + ARL + PENSIÓN desde <br>  $199.900</strong>
+						<strong>EPS + ARL + AFP desde <br>  $179.000</strong>
 					</p>
 				</div>
 				<div class="col-xs-12 col-md-6 feature-afiliation">
 					<h4 class="item_title item_title__">
-						<a href="<?php echo get_home_url(). "/planes/plan-proteccion/"; ?>">
-							Afiliese Plan <br> Protección
+						<a href="<?php echo get_home_url(). "/planes/plan-premium/"; ?>">
+							Afiliese Plan <br> Premium
 						</a>
 					</h4>
 					<p style="text-align: center;">
-						<strong>EPS + ARL + PENSIÓN desde <br> $186.900</strong>
+						<strong>EPS + ARL + AFP + CCF desde <br> $212.000</strong>
 					</p>
 				</div>
 			</div>
