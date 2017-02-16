@@ -82,6 +82,11 @@ function submitSoporte(){
     include 'views/submitsoporte.php';
 }
 
+//Sobre los logos
+function logos_section(){
+    include 'views/logos/logos.php';
+}
+
 add_shortcode('test', 'registerForm');
 add_shortcode('start', 'startSession');
 add_shortcode('perfil', 'perfil');
@@ -90,6 +95,7 @@ add_shortcode('admin', 'administrator');
 add_shortcode('cambios', 'cambios');
 add_shortcode('insertar', 'insertarDatos');
 add_shortcode('services', 'services');
+add_shortcode('logos', 'logos_section');
 add_shortcode('soporte', 'soporte');
 add_shortcode('submitsoporte', 'submitSoporte');
 
