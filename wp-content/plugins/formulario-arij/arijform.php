@@ -87,6 +87,10 @@ function logos_section(){
     include 'views/logos/logos.php';
 }
 
+function parallax(){
+    include 'views/logos/parallax.php';
+}
+
 add_shortcode('test', 'registerForm');
 add_shortcode('start', 'startSession');
 add_shortcode('perfil', 'perfil');
@@ -98,6 +102,7 @@ add_shortcode('services', 'services');
 add_shortcode('logos', 'logos_section');
 add_shortcode('soporte', 'soporte');
 add_shortcode('submitsoporte', 'submitSoporte');
+add_shortcode('parallax_arij', 'parallax');
 
     /*
     * @description Hook que se ejecuta al desactivar el plugin
