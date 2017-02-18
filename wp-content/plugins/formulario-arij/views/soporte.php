@@ -5,21 +5,39 @@
 	<hr>
 	<div id="informacion">
 		<p class="col-sm-6">
-			<span class="glyphicon glyphicon-home"></span>
-			- Bogotá: Cra 107 # 77 C 38 <br>
-			<span class="glyphicon glyphicon-envelope"></span>
-			soporte@aycgrupoempresarial.com  <br>
-			<span class="glyphicon glyphicon-envelope"></span>
-			contacto@aycgrupoempresarial.com  <br>
+			<span class="fa fa-home"></span>
+			Bogotá: Crr 17 B no. 111 Of. 201. <br>
+			<span class="fa fa-envelope"></span>
+			<a href="mailto:soporte@aycgrupoempresarial.com">
+			soporte@aycgrupoempresarial.com</a>  <br>
+			<span class="fa fa-envelope"></span>
+			<a href="mailto:contacto@aycgrupoempresarial.com">
+			contacto@aycgrupoempresarial.com</a>  <br>
+			<span class="fa fa-envelope"></span>
+			<a href="mailto:aycgrupoempresarial2017@gmail.com">
+			aycgrupoempresarial2017@gmail.com</a>  <br>
 		</p>
 		<p class="col-sm-6">
-			<span class="glyphicon glyphicon-phone"></span>
-			321 928 3242<br>
-			<span class="glyphicon glyphicon-hand-up"></span>
-			http://www.aycgrupoempresarial.com
+			<span class="fa fa-phone-square"></span>
+			Teléfono: <a href="tel:476">476</a><br>
+			<span class="fa fa-phone-square"></span>
+			Celular: <a href="tel:3219283242">321 928 3242</a><br>
+			<span class="fa fa-facebook-official"></span>
+			<a href="https://www.facebook.com/aycgrupoempresarial/">AYC Grupo Empresarial</a><br>
+			<span class="fa fa-hand-o-up"></span>
+			<a href="http://aycgrupoempresarial.com">AYC Grupo Empresarial</a><br>
 		</p>
 	</div>
-	<br><br><br><br><br><br><br>
+	<div align="center">
+		<br><br><br><br>
+		<hr>
+		<h4>Horarios de Atención Presencial</h4>
+		<span class="fa fa-calendar"></span>
+		Lunes a Viernes: 8:00 am a 5:00 pm <br>
+		<span class="fa fa-calendar"></span>
+		Sábados: 9:00 am a 1:00 pm
+	</div>
+	<br>
 	<div class="contact-form">
 		<form class="form-horizontal" method="POST" action="<?php echo get_home_url(). "/soporte/submit"; ?>">
 
@@ -59,6 +77,6 @@
 					<button type="submit" class="btn btn-success btn-lg">Enviar Mensaje</button>
 				</div>
 			</div>
-		</form>		
+		</form>
 	</div>
 </div>

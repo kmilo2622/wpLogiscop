@@ -100,10 +100,10 @@ foreach ($epstablita as $e) {
 //Insertamos ahora información en la tabla de afiliaciones
 
 $afiliacionestablita = array(
-    'Básico EPS + ARL' => 69900,
-    'Complementario EPS + ARL + CAJA' => 89900,
-    'Protección EPS + ARL + PENSIÓN' => 186900,
-    'Integral EPS + ARL + PENSIÓN + CAJA' => 199900
+    'Básico EPS + ARL' => 66000,
+    'Complementario EPS + ARL + CCF' => 98000,
+    'Protección EPS + ARL + AFP' => 179000,
+    'Premium EPS + ARL + AFP + CCF' => 212000
 );
 
 foreach ($afiliacionestablita as $a => $precio) {

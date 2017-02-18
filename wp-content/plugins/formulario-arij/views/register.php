@@ -1,16 +1,18 @@
+<!--
 <div class="exclaimer">
     <div class="col-sm-2" align="center">
         <h4><strong>Información</strong></h4>
         <br>
     </div>
     <div class="col-sm-9">
-        Registrate sólo si estás seguro (a) de afiliarte con tus beneficiarios a la seguridad social y aceptas las condiciones del servicio indicadas en cada plan de servicios. Afiliamos como cotizante dependiente. Con nuestra tecnología y grupo de asesores, podrás pagar en línea o en BALOTO y EFECTY, descargar certificados de afiliación y/o planillas. Después de una rápida verificación, te enviaremos factura de pago y recibirás al correo la información sobre documentos requeridos y tiempos de afiliación según los servicios contratados. Solicita soporte para tus preguntas y dudas a través del PBX, Correo electrónico, Chat o Whatsapp
+        Registrate solamente si estás seguro y aceptas nuestros términos y condiciones
     </div>
 </div>
 <br>
 <br><br>
 <br><br>
 <br><br>
+-->
 <div class="container exclaimer">
     <div class="formulario">
         <form class="form-horizontal" method="POST" action="<?php echo get_home_url(). "/mi-cuenta/registrarse/registro-completado/" ?>" enctype="multipart/form-data">
@@ -131,19 +133,21 @@
                 <div class="col-sm-9">
                     <select required class="form-control" id="sel1" name="afiliacion">
                         <option value="0">Seleccione los servicios que desea cotizar</option>
-                        <option value="1">Básico EPS + ARL (Desde $69.900)</option>
-                        <option value="2">Complementario EPS + ARL + CAJA (Desde $89.900)</option>
-                        <option value="3">Protección EPS + ARL + PENSIÓN (Desde $186.900 )</option>
-                        <option value="4">Integral EPS + ARL + PENSIÓN + CAJA (Desde $199.900)</option>
+                        <option value="1">Básico EPS + ARL (Desde $66.000)</option>
+                        <option value="2">Medium EPS + ARL + CCF (Desde $98.000)</option>
+                        <option value="3">Especial EPS + ARL + AFP (Desde $179.000 )</option>
+                        <option value="4">Premium EPS + ARL + AFP + CCF (Desde $212.000)</option>
                     </select>
                 </div>
             </div>
+
+            <!--
 
             <div class="form-group">
                 <label for="riesgo" class="control-label col-sm-2">ARL : </label>
                 <div class="col-sm-9">
                     <p>
-                        LOGISCOP informa que ha seleccionado trabajar con: <br> POSITIVA y SURA según EPS y nivel de riesgo
+                        LOGISCOP informa que ha seleccionado trabajar con: <br> alguno
                     </p>
                 </div>
             </div>
@@ -152,10 +156,12 @@
                 <label for="riesgo" class="control-label col-sm-2">Tenga en cuenta : </label>
                 <div class="col-sm-9">
                     <p>
-                        Si cambia de EPS, el trámite entre la nueva y la actual EPS toma cerca de 20 días hábiles en surtir efecto. Si requiere tratamiento medico inmediato, le aconsejamos continuar en su actual EPS
+                        Si cambia de eps algo sucederá, lo sabrá no se preocupe.
                     </p>
                 </div>
             </div>
+
+        -->
 
             <div class="form-group">
                 <label for="eps" class="control-label col-sm-2">EPS (Salud) *: </label>
