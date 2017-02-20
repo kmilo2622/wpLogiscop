@@ -8,15 +8,15 @@
 
 <style type="text/css">
 .feature-afiliation{
-	background-image: url("http://bloodlineproducts.com/wp-content/uploads/2016/02/Light_Gray_429810_i0.png");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 96%;
 	height: 100%;
+	width: 48%;
 	padding-top: 20px;
 	padding-bottom: 30px;
-	margin-left: 0px;
-	margin-bottom: 20px;
+	margin-left: 1px;
+	margin-bottom: 5px;
+	margin-right: 1px;
+	border: 5px;
+	border-style: solid;
 }
 
 .features-index{
