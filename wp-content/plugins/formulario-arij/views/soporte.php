@@ -1,6 +1,6 @@
 <div class="content">
 	<p>
-		Bienvenido a nuestro formulario de soporte. Atendemos tus inquietudes, preguntas y sugerencias acerca de nuestro servicio. Responderemos tus solicitudes de 1 a 24 horas dependiendo la respuesta requerida.
+		AYC grupo empresarial le da la bienvenida a la herramienta de soporte, atendemos sus inquietudes o sugerencias acerca de nuestro servicio
 	</p>
 	<hr>
 	<div id="informacion">
@@ -19,7 +19,7 @@
 		</p>
 		<p class="col-sm-6">
 			<span class="fa fa-phone-square"></span>
-			Teléfono: <a href="tel:476">476</a><br>
+			Teléfono: <a href="tel:4764805">476 4805</a><br>
 			<span class="fa fa-phone-square"></span>
 			Celular: <a href="tel:3219283242">321 928 3242</a><br>
 			<span class="fa fa-facebook-official"></span>
